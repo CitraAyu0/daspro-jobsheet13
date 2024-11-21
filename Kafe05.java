@@ -42,33 +42,44 @@ public class Kafe05 {
         if (kodePromo.equals("DISKON50")) {
             totalHarga *= 0.5;
         } else if (kodePromo.equals("DISKON30")) {
-            totalHarga *= 0.7;
-        } else if (!kodePromo.isEmpty()) {
-            System.out.println("Kode promo tidak valid. Tidak ada pengurangan harga.");
+            totalHarga *= 0.7; 
         }
-    
+
         return totalHarga;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Menu("Andi", true, "DISKON50");
+        System.out.print("Masukkan nama pelanggan: ");
+        String namaPelanggan = sc.nextLine();
 
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc.nextInt();
+        System.out.print("Apakah Anda member? (true/false): ");
+        boolean isMember = sc.nextBoolean();
 
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
+        System.out.print("Masukkan kode promo (jika ada, kosongkan jika tidak): ");
+        sc.nextLine(); 
+        String kodePromo = sc.nextLine();
 
-        System.out.print("Masukkan kode promo Anda: ");
-        String kodePromo = sc.next();
+        Menu(namaPelanggan, isMember, kodePromo);
 
-        int totalHarga = hitungTotalHarga05(pilihanMenu, banyakItem, kodePromo);
+        int totalKeseluruhan = 0;
+        boolean selesai = false;
 
-        if (totalHarga > 0) {
-            System.out.println("\nTotal harga untuk pesanan Anda: Rp" + totalHarga);
+        while (!selesai) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan (0 untuk selesai): ");
+            int pilihanMenu = sc.nextInt();
+
+            if (pilihanMenu == 0) {
+                selesai = true;
+            } else {
+                System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+                int banyakItem = sc.nextInt();
+
+                totalKeseluruhan += hitungTotalHarga05(pilihanMenu, banyakItem, kodePromo);
+            }
         }
 
+        System.out.println("\nTotal keseluruhan pesanan Anda: Rp" + totalKeseluruhan);
     }
 }
