@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CafeSalesModif24",
+            "request": "launch",
+            "mainClass": "CafeSalesModif24",
+            "projectName": "daspro-jobsheet13_21118478"
+        },
+        {
+            "type": "java",
+            "name": "CafeSales05",
+            "request": "launch",
+            "mainClass": "CafeSales05",
+            "projectName": "daspro-jobsheet13_21118478"
+        },
+        {
+            "type": "java",
+            "name": "CafeSales24",
+            "request": "launch",
+            "mainClass": "CafeSales24",
+            "projectName": "daspro-jobsheet13_21118478"
+        },
+        {
+            "type": "java",
+            "name": "Kubus24",
+            "request": "launch",
+            "mainClass": "Kubus24",
+            "projectName": "daspro-jobsheet13_21118478"
+        },
+        {
+            "type": "java",
+            "name": "CafeSales",
+            "request": "launch",
+            "mainClass": "CafeSales",
+            "projectName": "daspro-jobsheet13_21118478"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
